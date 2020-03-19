@@ -1,0 +1,41 @@
+//COLORS
+$color-primary: #28b485;
+$color-primary-light: #7ed56fe0;
+$color-primary-dark: #55c57a;
+
+$color-secondary-light: #ffb900;
+$color-secondary-dark: #ff7730;
+
+$color-tertiary-light: #2998ff;
+$color-tertiary-dark: #5643fa;
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+$color-black: #000;
+$color-white: #fff;
+
+//GRID
+
+
+//TYPOGRAPHY
+$default-font-size: 1.6rem;
+
+$letter-spacing-heading--primary: 3.5rem;
+$letter-spacing-heading--sub: calc(#{$letter-spacing-heading--primary} * 7 / 14);
+
+//SELECTORS
+$placeholders: "::-webkit-input-placeholder,::-moz-input-placeholder,::-o-input-placeholder,::-ms-input-placeholder";
+
+//MAPS
+$cbs-selector-prefixes: (
+  webkit: "-webkit-",
+  moz: "-moz-",
+  ms: "-ms-",
+  o: "-o-",
+  blank: "",
+);

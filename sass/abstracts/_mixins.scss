@@ -1,0 +1,138 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin section-bg($img, $clip-path: "none",$x1: "",$y1: "",$x2: "",$y2: "",$x3: "",$y3: "",$x4: "",$y4: "",) {
+  // @if - to clip bg in a polygon shape
+  // @else - no clipping
+  @if $clip-path == "polygon" {
+    @include cbs(clip-path,
+      polygon(
+        $x1 $y1,
+        $x2 $y2,
+        $x3 $y3,
+        $x4 $y4));
+    background-image:
+      linear-gradient(
+        135deg, 
+        rgba($color-primary-light, 0.8), 
+        rgba($color-primary-dark, 0.8)), 
+      url('../img/#{$img}');
+    background-position: top;
+    background-size: cover;
+  } @else {
+    background-image:
+      linear-gradient(
+        135deg, 
+        rgba($color-primary-light, 0.8), 
+        rgba($color-primary-dark, 0.8)), 
+      url('../img/#{$img}');
+    background-position: top;
+    background-size: cover;
+  }
+}
+
+//bg gradient for gradient text
+@mixin gradient-text($to-right-or-left, $color-1, $color-2, $bg-or-text-color: 'bg') {
+  //leave empty for gradient coloured text
+  @if $bg-or-text-color != 'bg' {
+    background-image: 
+    linear-gradient(
+      #{$to-right-or-left}, 
+      #{$color-1}, 
+      #{$color-2});
+    display: inline-block;
+    -webkit-background-clip: text;
+    color: transparent;
+  } @else {
+    background-image: 
+    linear-gradient(
+      #{$to-right-or-left}, 
+      #{$color-1}, 
+      #{$color-2});
+  }
+}
+
+//bg linear gradient
+@mixin linear-gradient($to-right-or-left, $color-1, $color-2, $img: none) {
+  //@if - for an image background
+  //@lse - only the gradient
+  @if $img != 'none' {
+    background-image: 
+    linear-gradient(
+      #{$to-right-or-left}, 
+      #{$color-1}, 
+      #{$color-2}),
+    url('../img/#{$img}');
+  } @else {
+    background-image: 
+    linear-gradient(
+      #{$to-right-or-left}, 
+      #{$color-1}, 
+      #{$color-2});
+  }
+}
+
+//cross browser support
+@mixin cbs($property, $val) {
+  -webkit-#{$property}: $val;
+  -moz-#{$property}: $val;
+  -ms-#{$property}: $val;
+  -o-#{$property}: $val;
+  #{$property}: $val;
+}
+
+@mixin center-absolute($x-y-xy) {
+// y - to center vertically
+// x - to center horizontally
+// xy - to center on both axes
+  @if $x-y-xy == 'y' {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }@else if $x-y-xy == 'x' {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }@else if $x-y-xy == 'xy' {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+//--| MEDIA QUERY MANAGER
+/*
+
+0 - 600px     : Phone
+600 - 900px   : Tablet portrait
+900 - 1200px  : Tablet landscape
+12000 - 1800px: Desktop
+1800px +      : Big desktop
+
+$breakpoint argument choices:
+- phone
+- portrait
+- landscape
+- whale
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == 'phone' {
+      @media (max-width: 600px) {@content};
+  }
+  @if $breakpoint == 'portrait' {
+    @media (max-width: 900px) {@content};
+  }
+  @if $breakpoint == 'landscape' {
+    @media (max-width: 1200px) {@content};
+  }
+  @if $breakpoint == 'whale' {
+    @media (min-width: 1800px) {@content};
+  }
+}

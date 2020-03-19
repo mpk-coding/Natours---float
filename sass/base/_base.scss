@@ -1,0 +1,20 @@
+/* | resets */
+*,
+*::after,
+*::before {
+  /* to force inheritance, .layout(body) {box-sizing: border-box} */
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+//
+html {
+  /* | for rem units, where 1rem = 10px -- 10/16 = 62.5% */
+  font-size: 62.5%;
+}
+
+.layout {
+  /* not inherited by default */
+  box-sizing: border-box;
+}

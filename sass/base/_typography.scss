@@ -1,0 +1,91 @@
+body {
+  color: $color-grey-dark;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  padding: 3rem;
+}
+
+/* | header - heading 1 */
+
+.heading-primary {
+  color: #ffffff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  /* 
+  animation: textShadowFadeIn 1s ease-in forwards;
+  */
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: $letter-spacing-heading--primary;
+    animation: moveInLeft 1s ease-out;
+  }
+  
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: $letter-spacing-heading--sub;
+    // word-spacing: $word-spacing-heading--sub;
+    animation: moveInRight 1s ease-out;
+  }
+
+  /* remove the white space after last letter of first heading line,
+  set width of both lines to equal */
+  span {
+    margin: auto;
+    white-space: nowrap;
+    width: calc(100% - #{$letter-spacing-heading--primary});
+  }
+}
+
+/* | the rest */
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: .2rem;
+  transition: 
+    all 
+    .2s;
+  
+  // gradient color text
+  @include gradient-text(to right, $color-primary-light, $color-primary-dark, text);
+
+  &:hover {
+    transform: 
+      skewY(
+        2deg
+      )
+      skewX(
+        15deg
+      )
+      scale(
+        1.1
+      );
+    text-shadow: 
+      .5rem
+      1rem
+      2rem
+      rgba(
+        $color-black, 
+        0.2);
+  }
+}
+
+.heading-tertiary {
+  font-size: $default-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: $default-font-size;
+  
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}

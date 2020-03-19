@@ -1,0 +1,173 @@
+.card { 
+  // color variables
+  //@color-1a, where: 1 - card number, a - light color
+  $color-1a: $color-secondary-light;
+  $color-1b: $color-secondary-dark;
+  $color-2a: $color-primary-light;
+  $color-2b: $color-primary-dark;
+  $color-3a: $color-tertiary-light;
+  $color-3b: $color-tertiary-dark;
+
+  // FUNCTIONALITY //
+  // @$card-height - to contain 'position: absolute' children - '.card__side'//
+  $card-height: 52rem;
+  height: $card-height;
+  position: relative;
+
+  @include cbs(perspective, 150rem);
+
+  &__side {
+    background-color: $color-white;
+    height: $card-height;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+    overflow: hidden;
+
+    @include cbs(backface-visibility, hidden);
+
+    &--front {
+       
+      &-1 {
+
+      }
+
+      &-2 {
+
+      }
+
+      &-3 {
+
+      }
+    }
+
+  // BACKSIDE BACKGROUNDS
+    &--back {
+      transform: rotateY(180deg);
+
+      &-1 {
+        @include linear-gradient(to right bottom, $color-1a, $color-1b);
+      }
+
+      &-2 {
+        @include linear-gradient(to right bottom, $color-2a, $color-2b);
+      }
+
+      &-3 {
+        @include linear-gradient(to right bottom, $color-3a, $color-3b);        
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+  }
+
+  // FRONT SIDE STYLING
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    
+    @include cbs(clip-path, polygon(0 0, 100% 0, 100% 85%, 0 100%));
+    @include cbs(background-blend-mode, screen);
+
+    &--1 {
+      @include linear-gradient(to right bottom, $color-1a, $color-1b, 'nat-5.jpg');
+    }
+
+    &--2 {
+      @include linear-gradient(to right bottom, $color-2a, $color-2b, 'nat-6.jpg');      
+    }
+
+    &--3 {
+      @include linear-gradient(to right bottom, $color-3a, $color-3b, 'nat-7.jpg');
+    }
+
+    
+  }
+
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: $color-white;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%;
+
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+
+    @include cbs(box-decoration-break, clone);
+    &--1 {
+      @include gradient-text(to right bottom, rgba($color-1a, .85), rgba($color-1b, .85));
+    }
+
+    &--2 {
+      @include gradient-text(to right bottom, rgba($color-2a, .85), rgba($color-2b, .85));
+    }
+
+    &--3 {
+      @include gradient-text(to right bottom, rgba($color-3a, .85), rgba($color-3b, .85));
+    }
+  }
+
+  &__details {
+    padding: 3rem;
+
+    ul {
+      list-style-type: none;
+      width: 80%;
+      margin: 0 auto;
+
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-grey-light-2;
+        }
+      }
+    }
+  }
+
+  // BACK SIDE STYLING
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+
+  &__price-box {
+    margin-bottom: 8rem;
+    color: $color-white;
+  }
+
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
+  }
+}
