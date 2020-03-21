@@ -3,7 +3,6 @@ body {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   line-height: 1.7;
-  padding: 3rem;
 }
 
 /* | header - heading 1 */
@@ -12,6 +11,7 @@ body {
   color: #ffffff;
   text-transform: uppercase;
   backface-visibility: hidden;
+
   /* 
   animation: textShadowFadeIn 1s ease-in forwards;
   */
@@ -19,27 +19,33 @@ body {
     display: block;
     font-size: 6rem;
     font-weight: 400;
-    letter-spacing: $letter-spacing-heading--primary;
+    letter-spacing: 3.5rem;
+    // to make up for letter-spacing added on the right side of each letter, adding text-indent on the left side of the first letter = to letter-spacing so as to properly center the text.
+    text-indent: 3.5rem;
     animation: moveInLeft 1s ease-out;
+
+    @include respond(phone ) {
+      letter-spacing: 1rem;
+      text-indent: 1rem;
+      font-size: 5rem;
+    }
   }
   
   &--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
-    letter-spacing: $letter-spacing-heading--sub;
-    // word-spacing: $word-spacing-heading--sub;
+    letter-spacing: 1.75rem;
+    text-indent: 1.75rem;
     animation: moveInRight 1s ease-out;
-  }
 
-  /* remove the white space after last letter of first heading line,
-  set width of both lines to equal */
-  span {
-    margin: auto;
-    white-space: nowrap;
-    width: calc(100% - #{$letter-spacing-heading--primary});
+    @include respond(phone ) {
+      letter-spacing: .5rem;
+      text-indent: .5rem;
+    }
   }
 }
+
 
 /* | the rest */
 
@@ -54,6 +60,14 @@ body {
   
   // gradient color text
   @include gradient-text(to right, $color-primary-light, $color-primary-dark, text);
+
+  @include respond(portrait) {
+    font-size: 3rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
 
   &:hover {
     transform: 

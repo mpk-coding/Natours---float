@@ -1,43 +1,63 @@
 .navigation {
-//@ $buttonSize - diameter
-//@ $buttonPlacement - from top-right corner of the screen
-  $buttonSize: 7rem;
-  $buttonPlacement: 6rem;
-  $buttonBgSize: $buttonSize - 1rem;
+//variables in _variables.scss
 
   &__checkbox {
     display: none;
   }
 
   &__button {
-    $size: $buttonSize;
-    $placement: $buttonPlacement;
     background-color: $color-white;
-    height: $size;
-    width: $size;
+    height: $buttonSize;
+    width: $buttonSize;
     border-radius: 50%;
     position: fixed;
-    top: $placement;
-    right: $placement;
+    top: $buttonPlacement;
+    right: $buttonPlacement;
     z-index: 2000;
     box-shadow: 0 1rem 3rem rgba($color-black, .1);
     text-align: center;
     cursor: pointer;
+
+    @include respond(portrait) {
+      height: $buttonSize--small;
+      width:$buttonSize--small;
+      top: $buttonPlacement--small;
+      right: $buttonPlacement--small;
+    }
+
+    @include respond(phone) {
+      height: $buttonSize--phone;
+      width:$buttonSize--phone;
+      top: $buttonPlacement--phone;
+      right: $buttonPlacement--phone;
+    }
   }
 
   &__background {
-    $size: $buttonBgSize;
-    $placement: calc((#{$buttonSize} - #{$buttonBgSize}) / 2 + #{$buttonPlacement});
-    height: $size;
-    width: $size;
+    height: $buttonBgSize;
+    width: $buttonBgSize;
     border-radius: 50%;
     position: fixed;
-    top: $placement;
-    right: $placement;
+    top: calc((#{$buttonSize} - #{$buttonBgSize}) / 2 + #{$buttonPlacement});
+    right: calc((#{$buttonSize} - #{$buttonBgSize}) / 2 + #{$buttonPlacement});
     background-image: radial-gradient($color-primary-light, $color-primary-dark);
     z-index: 1000;
     transition: transform .8s cubic-bezier(0.86, 0, 0.24,1);
     // transform: scale(300);
+
+    @include respond(portrait) {
+      height: $buttonBgSize-small;
+      width: $buttonBgSize-small;
+      top: calc((#{$buttonSize--small} - #{$buttonBgSize-small}) / 2 + #{$buttonPlacement--small});
+      right: calc((#{$buttonSize--small} - #{$buttonBgSize-small}) / 2 + #{$buttonPlacement--small});
+    }
+
+    @include respond(phone) {
+      height: $buttonBgSize-phone;
+      width: $buttonBgSize-phone;
+      top: calc((#{$buttonSize--phone} - #{$buttonBgSize-phone}) / 2 + #{$buttonPlacement--phone});
+      right: calc((#{$buttonSize--phone} - #{$buttonBgSize-phone}) / 2 + #{$buttonPlacement--phone});
+    }
   }
 
   &__nav {
@@ -110,6 +130,14 @@
     position: relative;
     margin-top: calc(#{$buttonSize} / 2);
     transition: all .2s;
+
+    @include respond(portrait) {
+      margin-top: calc(#{$buttonSize--small} / 2);
+    }
+
+    @include respond(phone) {
+      margin-top: calc(#{$buttonSize--phone} / 2);
+    }
 
     &,
     &::before,

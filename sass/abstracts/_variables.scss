@@ -20,13 +20,39 @@ $color-black: #000;
 $color-white: #fff;
 
 //GRID
+$grid-width: 114rem;
+$grid-width-small: 50rem;
 
+$gutter-vertical: 8rem;
+$gutter-horizontal: 6rem;
+
+$gutter-vertical-small: 6rem;
+$gutter-horizontal-small: 0;
+
+$row-padding-small: 0 3rem;
+
+//LAYOUT
+$padding: 3rem;
+
+$padding--small: 0;
+
+//NAVIGATION
+//@ $buttonSize - diameter
+//@ $buttonPlacement - from top-right corner of the screen
+$buttonSize: 7rem;
+$buttonPlacement: 6rem;
+$buttonBgSize: $buttonSize - 1rem;
+
+$buttonSize--small: 7rem;
+$buttonPlacement--small: 4rem;
+$buttonBgSize-small: $buttonSize--small - 1rem;
+
+$buttonSize--phone: 7rem;
+$buttonPlacement--phone: 3rem;
+$buttonBgSize-phone: $buttonSize--small - 1rem;
 
 //TYPOGRAPHY
 $default-font-size: 1.6rem;
-
-$letter-spacing-heading--primary: 3.5rem;
-$letter-spacing-heading--sub: calc(#{$letter-spacing-heading--primary} * 7 / 14);
 
 //SELECTORS
 $placeholders: "::-webkit-input-placeholder,::-moz-input-placeholder,::-o-input-placeholder,::-ms-input-placeholder";

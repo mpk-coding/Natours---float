@@ -107,7 +107,7 @@
 }
 
 //--| MEDIA QUERY MANAGER
-/*
+/* INFO 
 
 0 - 600px     : Phone
 600 - 900px   : Tablet portrait
@@ -120,19 +120,24 @@ $breakpoint argument choices:
 - portrait
 - landscape
 - whale
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+Breakpoints in EM units.
+1em = 16px default.
 */
 
 @mixin respond($breakpoint) {
   @if $breakpoint == 'phone' {
-      @media (max-width: 600px) {@content};
+      @media (max-width: 37.5em) {@content}; // 600px / 16 = 37.5em
   }
   @if $breakpoint == 'portrait' {
-    @media (max-width: 900px) {@content};
+    @media (max-width: 56.25em) {@content}; // 900px / 16 = 56.25em
   }
   @if $breakpoint == 'landscape' {
-    @media (max-width: 1200px) {@content};
+    @media (max-width: 75em) {@content}; // 1200px / 16 = 75em
   }
   @if $breakpoint == 'whale' {
-    @media (min-width: 1800px) {@content};
+    @media (min-width: 112.5em) {@content}; // 1800px / 16 = 112.5em
   }
 }

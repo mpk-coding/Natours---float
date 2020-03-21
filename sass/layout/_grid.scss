@@ -1,22 +1,40 @@
 .row {
-  $grid-width: 114rem;
   max-width: $grid-width;
   margin: 0 auto;
-  $gutter-vertical: 8rem;
-  $gutter-horizontal: 6rem;
+
+  @include clearfix;
+
+  @include respond(portrait) {
+    max-width: $grid-width-small;
+    padding: $row-padding-small;
+  }
 
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+
+    @include respond(portrait) {
+      margin-bottom: $gutter-vertical-small;
+    }
   }
 
-  @include clearfix;
 
   [class^="col-"] {
     float: left;
 
+    @include respond(portrait) {
+      width: 100% !important;
+    }
+
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+
+      @include respond(portrait) {
+        margin-right: $gutter-horizontal-small;
+        margin-bottom: $gutter-vertical-small;
+      }
     }
+
+
   }
 
   .col-1-of-2 {
