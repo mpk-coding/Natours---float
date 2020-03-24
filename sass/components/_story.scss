@@ -6,14 +6,31 @@
   border-radius: 3px;
   padding: 6rem 6rem 6rem 9rem;
   font-size: $default-font-size;
-
-  @include clearfix;
   
   $skewX: -12 * 1deg;
   transform: skewX(#{$skewX});
 
+  @include clearfix;
+
+  @include respond(portrait) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+  @include respond(phone) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+    transform: skewX(0);
+  }
+
   & > * {
     transform: skewX(calc(#{$skewX} * -1));
+
+    @include respond(phone) {
+      transform: skewX(0);
+    }
   }
 
   &__shape {
@@ -26,6 +43,10 @@
 
     @include cbs (clip-path, circle(50% at 50% 50%));
     @include cbs(shape-outside, circle(50% at 50% 50%));
+
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
   }
 
   &__img {
@@ -36,6 +57,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1.4);
+
   }
 
   &__caption {

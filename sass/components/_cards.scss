@@ -11,10 +11,13 @@
   // FUNCTIONALITY //
   // @$card-height - to contain 'position: absolute' children - '.card__side'//
   $card-height: 52rem;
+  $card-height-small: auto;
+
   height: $card-height;
   position: relative;
 
   @include cbs(perspective, 150rem);
+
 
   &__side {
     background-color: $color-white;
@@ -170,4 +173,56 @@
     font-size: 6rem;
     font-weight: 100;
   }
+
+  @include respond(portrait) {
+    height: $card-height-small;
+    border-radius: 3px;
+    background: $color-white;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+    &__side {
+      background-color: $color-white;
+      height: auto;
+      position: relative;
+      box-shadow: none;
+      border-radius: 0;
+
+    // BACKSIDE BACKGROUNDS
+      &--back {
+        transform: rotateY(0deg);
+
+        @include cbs(clip-path, polygon(0 15%, 100% 0, 100% 100%, 0 100%));
+      }
+    }
+  
+    &:hover &__side--front {
+      transform: rotateY(0deg);
+    }
+
+    &__details {
+      padding: 1rem 3rem;
+    }
+  
+    // BACK SIDE STYLING
+    &__cta {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0);
+      width: 100%;
+      padding: 7rem 4rem 4rem 4rem;
+    }
+  
+    &__price-box {
+      margin-bottom: 3rem;
+    }
+  
+    &__price-value {
+      font-size: 4rem;
+      font-weight: 100;
+    }
+  }
+//----------------------------------------------------------------------------------
+
 }

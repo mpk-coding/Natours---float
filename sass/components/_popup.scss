@@ -28,6 +28,12 @@
   &__left {
     width: calc(100% / 3);
     display: table-cell;
+
+    @include respond(landscape) {
+      display: flex;
+      width: 100%;
+      overflow: hidden;
+    }
   }
 
   &__right {
@@ -35,12 +41,35 @@
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+
+    
+    @include respond(landscape) {
+      width: 100%;
+      display: block;
+      vertical-align: unset;
+    }
+
+    .btn {
+      @include respond(portrait) {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
   }
 
   &__img {
     display: block;
     width: 100%;
     height: auto;
+
+    @include respond(landscape) {
+      width: 50%;
+      display: inline-block;
+    }
+
+    @include respond(phone) {
+      width: 100%;
+    }
   }
 
   &__text {
@@ -51,6 +80,12 @@
     @include cbs(column-gap, 4rem);
     @include cbs(column-rule, 1px solid #{$color-grey-light-2});
     @include cbs(hyphens, auto);
+
+    @include respond(portrait) {
+      @include cbs(column-count, 1);
+      @include cbs(column-gap, 4rem);
+      @include cbs(column-rule, 1px solid #{$color-grey-light-2});
+    }
   }
 
   &__close {
@@ -67,6 +102,18 @@
       font-size: $size;
       text-decoration: none;
       display: inline-block;
+
+      @include respond(landscape) {
+        right: $from-top;
+        background: $color-white;
+        border-radius: 50%;
+        display: flex;
+        width: 4rem;
+        height: 4rem;
+        flex-flow: column-reverse;
+        justify-content: center;
+        align-items: center;
+      }
     }
   
     &:hover {

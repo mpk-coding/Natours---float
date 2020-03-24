@@ -29,10 +29,18 @@
 
 .u-margin-bottom-medium {
   margin-bottom: 4rem;
+
+  @include respond(portrait) {
+    margin-bottom: 3rem;
+  }
 }
 
 .u-margin-bottom-big {
   margin-bottom: 8rem;
+
+  @include respond(portrait) {
+    margin-bottom: 5rem;
+  }
 }
 
 .u-margin-top-big {
