@@ -18,6 +18,19 @@
 
   }
 
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 1;
+  }
+
   /* | button events */
 
   &:hover {
@@ -40,18 +53,6 @@
     }
   }
 
-  &::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 10rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    opacity: 1;
-  }
 
   &--animated-bottom {
     animation: moveInBtn 0.2s ease-out 0.8s backwards;
@@ -74,6 +75,7 @@
       background-color: $color-primary;
     }
   }
+
 }
 
 .btn-text {
@@ -99,4 +101,81 @@
     box-shadow: 0 0.5rem 1rem rgba($color-black, 0.15);
     transform: translateY(0);
   }
+}
+
+.btn-carousel {
+  &,
+  &:link,
+  &:visited,
+  &::after {
+    width: 6rem;
+    height: 6rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    border-radius: 50%;
+    display: inline-flex;
+    padding: 1rem;
+    position: relative;
+    transition: all 0.2s ease-out;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 1;
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-0.1rem);
+    box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &--1 {
+    &:link,
+    &:visited,
+    &::after {
+    }
+  }
+
+  &--2 {
+    &:link,
+    &:visited,
+    &::after {
+    
+    }
+  }
+
+  &--3 {
+    &:link,
+    &:visited,
+    &::after {
+    
+    }
+  }
+
 }

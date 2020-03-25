@@ -6,24 +6,29 @@
 
   @include section-bg('hero.jpg', polygon, 0, 0, 100%, 0, 100%, 75vh, 0, 100%);
 
-  @include respond(phone) {
+  @include respond(portrait) {
     @include section-bg('hero.jpg', polygon, 0, 0, 100%, 0, 100%, 85vh, 0, 100%);
   }
   
   &__logo-box {
     //@ $$buttonPlacement - equal positioning to the nav-burger
     position: absolute;
-    top: calc((#{$buttonSize} / 2 - #{$padding} + #{$buttonPlacement});
+    top: calc((#{$buttonSize} / 2 - #{$padding} + #{$buttonPlacement}));
     left: $buttonPlacement - $padding;
     transform: translateY(-50%);
 
+    @include respond(landscape) {
+      top: calc((#{$buttonSize} / 2 + #{$buttonPlacement}));
+      left: $buttonPlacement;      
+    }
+
     @include respond(portrait) {
-      top: calc((#{$buttonSize--small} / 2 + #{$buttonPlacement--small});
+      top: calc((#{$buttonSize--small} / 2 + #{$buttonPlacement--small}));
       left: $buttonPlacement--small;
     }
 
     @include respond(phone) {
-      top: calc((#{$buttonSize--phone} / 2 + #{$buttonPlacement--phone});
+      top: calc((#{$buttonSize--phone} / 2 + #{$buttonPlacement--phone}));
       left: $buttonPlacement--phone;
     }
   }

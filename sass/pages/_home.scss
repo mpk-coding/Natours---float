@@ -1,18 +1,26 @@
+.section-test {
+  height: 95vh;
+  overflow: hidden;
+}
+
 .section-about {
   background-color: $color-grey-light-1;
-  padding: 25rem 0;
+  padding: 20rem 0;
+  padding-top: calc(20vh + 10rem);
   margin-top: -20vh;
 
   @include respond(portrait) {
-    padding: 20rem 0;
+    padding: 10rem 0;
+    padding-top: calc(10vh + 5rem);
+    margin-top: -10vh;    
   }
 }
 
 .section-features {
   padding: 20rem 0;
-  $skewY: -7 * 1deg;
-  transform: skewY(#{$skewY});
-  margin-top: -10rem;
+  // $skewY: -7 * 1deg;
+  // transform: skewY(#{$skewY});
+  // margin-top: -10rem;
 
   @include section-bg('nat-4.jpg');
 
@@ -21,22 +29,22 @@
   }
 
   & > * {
-    transform: skewY(calc(#{$skewY} * -1));
+    // transform: skewY(calc(#{$skewY} * -1));
   }
 }
 
 .section-tours {
   background-color: $color-grey-light-1;
-  padding: 25rem 0 15rem 0;
-  margin-top: -10rem;
+  padding: 20rem 0 15rem 0;
+  //margin-top: -10rem;
 
   @include respond(portrait) {
-    padding: 20em 0 10rem 0;
+    padding: 10rem 0 10rem 0;
   }
 }
 
 .section-stories {
-  padding: 15rem 0;
+  padding: 20rem 0;
   background-color: transparent;
   position: relative;
 
@@ -46,7 +54,7 @@
 }
 
 .section-book {
-  padding: 15rem 0;
+  padding: 20rem 0;
   
   @include linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
 
