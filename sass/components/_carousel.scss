@@ -40,7 +40,7 @@
     top: 50%;
     transform: translateY(-50%);
     border-radius: 50%;
-    transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out, left 0s, right 0s;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -86,12 +86,12 @@
     }
 
     &--2 {
-      right: calc(100vw - #{$btn-size});
+      left: 0;
       z-index: 991;
     }
 
     &--3 {
-      right: calc(-100vw - #{$btn-size});
+      right: 0;
     }
 
     &--4 {
@@ -160,30 +160,31 @@
   }
 
   &__radio--1:checked ~ .carousel__label--1 .carousel__btn {
-    right: 0vw;
-    opacity: 0;
+    left: 0;
+    display: none;
   }
 
   &__radio--1:checked ~ .carousel__label--2 .carousel__btn {
-    right: 0vw;
+    right: 0;
+    left: unset;
   }
 
   &__radio--1:checked ~ .carousel__label--3 .carousel__btn {
-    right: calc(100vw - #{$btn-size});
-    opacity: 0;
+    left: 0;
+    display: none;
   }
 
   &__radio--1:not(:checked) ~ .carousel__label--1 .carousel__btn {
-    right: calc(100vw - #{$btn-size});
+    left: 0;
     z-index: 988;
   }
 
   &__radio--3:not(:checked) ~ .carousel__label--3 .carousel__btn {
-    right: calc(0vw - #{$btn-size});
+    right: 0;
   }
 
   &__radio--2:checked ~ .carousel__label--2 .carousel__btn {
-    right: calc(100vw - #{$btn-size});
+    left: 0;
     z-index: 987;
     opacity: 0;
   }
@@ -193,12 +194,12 @@
   }
 
   &__radio--3:checked ~ .carousel__label--3 .carousel__btn {
-    right: calc(100vw - #{$btn-size});
-    z-index: 989;
-    background-color: $bg-color;
+    visibility: hidden;
+    left: 0;
+    right: unset;
 
     &::after {
-      background-color: $bg-color;
+
     }
   }
 

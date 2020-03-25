@@ -507,7 +507,7 @@ body {
     top: 50%;
     transform: translateY(-50%);
     border-radius: 50%;
-    transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out, left 0s, right 0s;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -541,10 +541,10 @@ body {
     .carousel__btn--1 {
       z-index: 990; }
     .carousel__btn--2 {
-      right: calc(100vw - calc(6rem + 1rem * 2));
+      left: 0;
       z-index: 991; }
     .carousel__btn--3 {
-      right: calc(-100vw - calc(6rem + 1rem * 2)); }
+      right: 0; }
     .carousel__btn--4 {
       right: 35vw; }
     .carousel__btn--5 {
@@ -566,30 +566,29 @@ body {
   .carousel__radio--3:checked ~ .carousel__page {
     right: 200vw; }
   .carousel__radio--1:checked ~ .carousel__label--1 .carousel__btn {
-    right: 0vw;
-    opacity: 0; }
+    left: 0;
+    display: none; }
   .carousel__radio--1:checked ~ .carousel__label--2 .carousel__btn {
-    right: 0vw; }
+    right: 0;
+    left: unset; }
   .carousel__radio--1:checked ~ .carousel__label--3 .carousel__btn {
-    right: calc(100vw - calc(6rem + 1rem * 2));
-    opacity: 0; }
+    left: 0;
+    display: none; }
   .carousel__radio--1:not(:checked) ~ .carousel__label--1 .carousel__btn {
-    right: calc(100vw - calc(6rem + 1rem * 2));
+    left: 0;
     z-index: 988; }
   .carousel__radio--3:not(:checked) ~ .carousel__label--3 .carousel__btn {
-    right: calc(0vw - calc(6rem + 1rem * 2)); }
+    right: 0; }
   .carousel__radio--2:checked ~ .carousel__label--2 .carousel__btn {
-    right: calc(100vw - calc(6rem + 1rem * 2));
+    left: 0;
     z-index: 987;
     opacity: 0; }
   .carousel__radio--2:checked ~ .carousel__label--3 .carousel__btn {
     right: 0vw; }
   .carousel__radio--3:checked ~ .carousel__label--3 .carousel__btn {
-    right: calc(100vw - calc(6rem + 1rem * 2));
-    z-index: 989;
-    background-color: yellow; }
-    .carousel__radio--3:checked ~ .carousel__label--3 .carousel__btn::after {
-      background-color: yellow; }
+    visibility: hidden;
+    left: 0;
+    right: unset; }
 
 .composition {
   position: relative; }
