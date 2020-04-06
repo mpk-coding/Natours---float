@@ -23,8 +23,8 @@
 
   @include section-bg('nat-4--small.jpg');
 
-  @media (min-resolution: 192dpi) and (min-width: 37.5em),
-  (min-width: 125em) {
+  @media only screen and(min-resolution: 192dpi) and (min-width: 37.5em),
+  screen and (min-width: 125em) {
     @include section-bg('nat-4.jpg');
   }
 
@@ -46,6 +46,7 @@
     }
 
     [class*="col"] {
+      width: 25%;
       display: table-cell;
       float: none;
       background-color: rgba($color-white, 0.8);
