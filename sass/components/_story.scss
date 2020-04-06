@@ -34,9 +34,13 @@
     transform: translateX(-3rem) skewX(calc(#{$skewX} * -1));
     position: relative;
     overflow: hidden;
+    border-radius: 50%;
 
-    @include cbs (clip-path, circle(50% at 50% 50%));
-    @include cbs(shape-outside, circle(50% at 50% 50%));
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      @include cbs (clip-path, circle(50% at 50% 50%));
+      @include cbs(shape-outside, circle(50% at 50% 50%));
+      border-radius: none;
+    }
 
     @include respond(portrait) {
       transform: translateX(-3rem) skewX(0);

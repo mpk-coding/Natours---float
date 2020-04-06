@@ -1,16 +1,21 @@
 .row {
   max-width: $grid-width;
   margin: 0 auto;
+  padding: $row-padding;
 
   @include clearfix;
 
   @include respond(landscape) {
     max-width: 100%;
-    padding: $row-padding-small;
   }
 
   @include respond(portrait) {
     max-width: $grid-width-small;
+    padding: $row-padding-medium;
+  }
+
+  @include respond(phone) {
+    padding: $row-padding-small;
   }
 
   &:not(:last-child) {

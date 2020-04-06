@@ -13,7 +13,7 @@ html {
   /* | for rem units, if 1rem = 10px -- 10/16 = 62.5% of default 16px */
   font-size: 62.5%; //1rem = 10px; 10px / 16 = 62.5%
 
-  @include respond(whale) { // < 1200px
+  @include respond(whale) { // > 1800px
     font-size: 75%; // 1rem = 12px, 12px / 16 = 75%
   }
 
@@ -21,7 +21,7 @@ html {
     font-size: 56.25%; // 1rem = 9px, 9px / 16 = 56.25%
   }
 
-  @include respond(portrait) { // > 1800px
+  @include respond(portrait) { // < 1200px
     font-size: 50%; // 1rem = 8px, 8px / 16 = 50%
   }
 }
@@ -34,4 +34,9 @@ html {
   @include respond(landscape) {
     padding: $padding--small;
   }
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
 }

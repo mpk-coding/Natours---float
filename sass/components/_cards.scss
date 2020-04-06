@@ -85,15 +85,27 @@
     @include cbs(background-blend-mode, screen);
 
     &--1 {
-      @include linear-gradient(to right bottom, $color-1a, $color-1b, 'nat-5.jpg');
+      @include linear-gradient(to right bottom, $color-1a, $color-1b, 'nat-5--lowRes.jpg');
+
+      @media only screen and (min-resolution: 192dpi) {
+        @include linear-gradient(to right bottom, $color-1a, $color-1b, 'nat-5--retina.jpg');
+      }
     }
 
     &--2 {
-      @include linear-gradient(to right bottom, $color-2a, $color-2b, 'nat-6.jpg');      
+      @include linear-gradient(to right bottom, $color-2a, $color-2b, 'nat-6--lowRes.jpg');
+      
+      @media only screen and (min-resolution: 192dpi) {
+        @include linear-gradient(to right bottom, $color-2a, $color-2b, 'nat-6--retina.jpg');
+      }
     }
 
     &--3 {
-      @include linear-gradient(to right bottom, $color-3a, $color-3b, 'nat-7.jpg');
+      @include linear-gradient(to right bottom, $color-3a, $color-3b, 'nat-7--lowRes.jpg');
+
+      @media only screen and (min-resolution: 192dpi) {
+        @include linear-gradient(to right bottom, $color-3a, $color-3b, 'nat-7--retina.jpg');
+      }
     }
 
     
@@ -174,7 +186,8 @@
     font-weight: 100;
   }
 
-  @include respond(portrait) {
+  @media only screen and (max-width: 56.25em),
+  only screen and (hover: none) {
     height: $card-height-small;
     border-radius: 3px;
     background: $color-white;

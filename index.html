@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet" />
-  <link href="css/icon-font.css" rel="stylesheet" />
+  <!-- <link href="css/icon-font.css" rel="stylesheet" /> -->
   <link href="css/style.css" rel="stylesheet" />
   <link href="img/favicon.png" rel="shortcut icon" type="image/png" />
 
@@ -22,41 +22,22 @@
     <label for="navi-toggle" class="navigation__button">
       <span class="navigation__icon">&nbsp;</span>
     </label>
-    
+
     <div class="navigation__background">&nbsp;</div>
 
     <div class="navigation__nav">
       <ul class="navigation__list">
-        <li class="navigation__item"><a href="#section-about" class="navigation__link"><span>01</span>About Natours</a></li>
-        <li class="navigation__item"><a href="#section-features" class="navigation__link"><span>02</span>Your benefits</a></li>
-        <li class="navigation__item"><a href="#section-tours" class="navigation__link"><span>03</span>Popular tours</a></li>
+        <li class="navigation__item"><a href="#section-about" class="navigation__link"><span>01</span>About Natours</a>
+        </li>
+        <li class="navigation__item"><a href="#section-features" class="navigation__link"><span>02</span>Your
+            benefits</a></li>
+        <li class="navigation__item"><a href="#section-tours" class="navigation__link"><span>03</span>Popular tours</a>
+        </li>
         <li class="navigation__item"><a href="#section-stories" class="navigation__link"><span>04</span>Stories</a></li>
         <li class="navigation__item"><a href="#section-book" class="navigation__link"><span>05</span>Book now</a></li>
       </ul>
     </div>
-  
-  </div>
-  <div class="section-test">
-    <div class="carousel">
 
-      <input type="radio" id="carousel__toggle--1" class="carousel__radio carousel__radio--1" name="carousel__pagination" checked>
-      <label for="carousel__toggle--1" class="carousel__label carousel__label--1">
-        <span class="carousel__btn carousel__btn--1 btn--green">1</span>
-      </label>
-
-      <input type="radio" id="carousel__toggle--2" class="carousel__radio carousel__radio--2" name="carousel__pagination">
-      <label for="carousel__toggle--2" class="carousel__label carousel__label--2">
-        <span class="carousel__btn carousel__btn--2 btn--green">2</span>
-      </label>
-
-      <input type="radio" id="carousel__toggle--3" class="carousel__radio carousel__radio--3" name="carousel__pagination">
-      <label for="carousel__toggle--3" class="carousel__label carousel__label--3">
-        <span class="carousel__btn carousel__btn--3 btn--green">3</span>
-      </label>
-
-      <div class="carousel__page"></div>
-
-    </div>
   </div>
   <header class="header">
     <div class="header__logo-box">
@@ -185,9 +166,41 @@
         <div class="col-1-of-2">
           <!-- .composition>(img.composition__photo.composition__photo--p1)*3 -->
           <div class="composition">
+
+            <img srcset="
+                    img/nat-1.jpg 300w, 
+                    img/nat-1-large.jpg 1000w" 
+                    sizes="
+                    (max-width: 56.25em) 13vw,
+                    1000px" 
+                    src="img/nat-1-large.jpg" 
+                    alt="Photo 1"
+                    class="composition__photo composition__photo--p1">
+
+            <img srcset="
+                    img/nat-2.jpg 300w, 
+                    img/nat-2-large.jpg 1000w" 
+                    sizes="
+                    (max-width: 56.25em) 13vw,
+                    1000px" 
+                    src="img/nat-2-large.jpg" 
+                    alt="Photo 2"
+                    class="composition__photo composition__photo--p2">
+
+            <img srcset="
+                    img/nat-3.jpg 300w, 
+                    img/nat-3-large.jpg 1000w" 
+                    sizes="
+                    (max-width: 56.25em) 13vw,
+                    1000px" 
+                    src="img/nat-3-large.jpg" 
+                    alt="Photo 3"
+                    class="composition__photo composition__photo--p3">
+            <!--
             <img src="img/nat-1-large.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
             <img src="img/nat-2-large.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
             <img src="img/nat-3-large.jpg" alt="Photo 3" class="composition__photo composition__photo--p3">
+-->
           </div>
         </div>
       </div>
@@ -198,27 +211,21 @@
           <div class="feature-box">
             <i class="feature-box__icon icon-basic-world"></i>
             <h3 class="heading-tertiary u-margin-bottom-small">Explore the world</h3>
-            <p class="feature-box__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero sunt eveniet
-              natus neque mollitia ut asperiores laborum harum exercitationem cumque incidunt, adipisci rem aspernatur
-              perspiciatis quaerat soluta omnis, eaque voluptatibus!</p>
+            <p class="feature-box__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates suscipit aspernatur laudantium nostrum sequi amet debitis labore deleniti eligendi possimus facilis, incidunt fugit reiciendis quis minus officiis qui repellat! Rerum.</p>
           </div>
         </div>
         <div class="col-1-of-4">
           <div class="feature-box">
             <i class="feature-box__icon icon-basic-compass"></i>
             <h3 class="heading-tertiary u-margin-bottom-small">Meet nature</h3>
-            <p class="feature-box__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero sunt eveniet
-              natus neque mollitia ut asperiores laborum harum exercitationem cumque incidunt, adipisci rem aspernatur
-              perspiciatis quaerat soluta omnis, eaque voluptatibus!</p>
+            <p class="feature-box__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae excepturi autem tempora ratione adipisci dignissimos quam. Eveniet inventore nam recusandae, dolor totam nihil iste neque architecto tempora est beatae ut.</p>
           </div>
         </div>
         <div class="col-1-of-4">
           <div class="feature-box">
             <i class="feature-box__icon icon-basic-map"></i>
             <h3 class="heading-tertiary u-margin-bottom-small">Find your way</h3>
-            <p class="feature-box__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero sunt eveniet
-              natus neque mollitia ut asperiores laborum harum exercitationem cumque incidunt, adipisci rem aspernatur
-              perspiciatis quaerat soluta omnis, eaque voluptatibus!</p>
+            <p class="feature-box__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste enim quibusdam repudiandae laboriosam beatae aliquid error et, unde neque, mollitia illo itaque eum. Non harum nulla fugit maxime at praesentium?</p>
           </div>
         </div>
         <div class="col-1-of-4">
@@ -356,7 +363,17 @@
       <div class="row">
         <div class="story">
           <figure class="story__shape">
-            <img src="img/nat-8.jpg" alt="person on a tour" class="story__img">
+            <img 
+            srcset="img/nat-8-300.jpg 300w,
+            img/nat-8-600.jpg 600w,
+            img/nat-8-1000.jpg 1000w"
+            sizes="(max-width: 75em) 202px
+            ,(max-width: 56.25em) 180px,
+            (max-width: 37.5em) 180px,        
+            (min-width: 112.5em) 270px,"
+            src="img/nat-8-2000.jpg" 
+            alt="person on a tour" 
+            class="story__img">
             <figcaption class="story__caption">Mary Smith</figcaption>
           </figure>
           <div class="story__text">
@@ -370,7 +387,17 @@
       <div class="row">
         <div class="story">
           <figure class="story__shape">
-            <img src="img/nat-9.jpg" alt="person on a tour" class="story__img">
+            <img 
+            srcset="img/nat-9-300.jpg 600w,
+            img/nat-9-600.jpg 600w,
+            img/nat-9-1000.jpg 1000w"
+            sizes="(max-width: 75em) 202px
+            ,(max-width: 56.25em) 180px,
+            (max-width: 37.5em) 180px,        
+            (min-width: 112.5em) 270px,"
+            src="img/nat-9-2000.jpg" 
+            alt="person on a tour" 
+            class="story__img">
             <figcaption class="story__caption">Jack Wilson</figcaption>
           </figure>
           <div class="story__text">
@@ -430,7 +457,15 @@
   </main>
   <footer class="footer">
     <div class="footer__logo-box">
-      <img src="img/logo-green-2x.png" alt="Full logo" class="footer__logo">
+      <picture class="footer__logo">
+        <source srcset="
+            img/logo-green-small-1x.png 1x, 
+            img/logo-green-small-2x.png 2x" media="
+            (max-width: 37.5em)">
+        <img srcset="
+            img/logo-green-1x.png 1x, 
+            img/logo-green-2x.png 2x" src="img/logo-green-2x.png" alt="Full logo">
+      </picture>
     </div>
     <div class="row">
       <div class="col-1-of-2">
@@ -445,21 +480,42 @@
         </div>
       </div>
       <div class="col-1-of-2">
-        <p class="footer__copyright">Built by <a href="#" class="footer__link">Jonas Schmedtmann</a> for his online course <a href="#" class="footer__link">Advanced CSS and Sass</a>. Copyright &copy; by Jonas Schmedtmann. You are 100% allowed to use this webpage for both personal and commercial use, but NOT claim it as your own design. A credit to the original author, Jonas Schmedtmann, is of course highly appreciated!</p>
+        <p class="footer__copyright">Built by <a href="#" class="footer__link">Jonas Schmedtmann</a> for his online
+          course <a href="#" class="footer__link">Advanced CSS and Sass</a>. Copyright &copy; by Jonas Schmedtmann. You
+          are 100% allowed to use this webpage for both personal and commercial use, but NOT claim it as your own
+          design. A credit to the original author, Jonas Schmedtmann, is of course highly appreciated!</p>
       </div>
     </div>
   </footer>
   <div id="popup" class="popup">
     <div class="popup__content">
       <div class="popup__left">
-        <img src="img/nat-8.jpg" alt="Tour photo" class="popup__img">
-        <img src="img/nat-9.jpg" alt="Your photo" class="popup__img">
+        <img srcset="img/nat-8-600.jpg 600w,
+        img/nat-8-1000.jpg 1000w,
+        img/nat-8-1200.jpg 1200w,
+        img/nat-8-2000.jpg 2000w"
+        sizes="(max-width: 75em) 450px,
+        (max-width: 56.25em) 337px,
+        (max-width: 37.5em) 75vw,      
+        (min-width: 112.5) 250vw,"
+        src="img/nat-8-2000.jpg" alt="Tour photo" class="popup__img">
+        <img srcset="img/nat-9-600.jpg 600w,
+        img/nat-9-1000.jpg 1000w,
+        img/nat-9-1200.jpg 1200w,
+        img/nat-9-2000.jpg 2000w"
+        sizes="(max-width: 75em) 450px,
+        (max-width: 56.25em) 337px,
+        (max-width: 37.5em) 75vw,      
+        (min-width: 112.5) 250vw,"
+        src="img/nat-9-2000.jpg" alt="Tour photo" class="popup__img">
       </div>
       <div class="popup__right">
         <a href="#section-tours" class="popup__close">&times;</a>
         <h2 class="heading-secondary u-margin-bottom-small">Start booking now</h2>
         <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; Please read these terms before booking</h3>
-        <p class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum odio, sit repudiandae accusamus ipsa neque, autem ullam eligendi tempore, blanditiis fugit perferendis quidem harum temporibus obcaecati repellendus ab quasi architecto.</p>
+        <p class="popup__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum odio, sit repudiandae
+          accusamus ipsa neque, autem ullam eligendi tempore, blanditiis fugit perferendis quidem harum temporibus
+          obcaecati repellendus ab quasi architecto.</p>
         <a href="#" class="btn btn--green">book now</a>
       </div>
     </div>
